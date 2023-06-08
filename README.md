@@ -8,6 +8,10 @@ then:
 
 now you can run the API on localhost:8080.
 
+to run mongodb use this command 
+
+docker run -d -p 27017:27017 --name some-mongo  mongo:latest
+
 you can find the APIs postman collection  
 in this repo .
 
