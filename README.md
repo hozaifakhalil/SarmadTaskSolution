@@ -1,7 +1,7 @@
 # SarmadTaskSolution
 to run this project with docker do the following steps:
 
- docker build -t device-shop . 
+ docker build -t sarmad-task . 
  
 then:
  docker run -p 8080:8080 --rm -t device-shop 
