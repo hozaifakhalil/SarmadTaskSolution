@@ -1,5 +1,5 @@
 # Use a base image with Alpine Linux and Java 17 installed
-FROM adoptopenjdk:17-jdk-hotspot as builder
+FROM maven:3.9.2-eclipse-temurin-17-alpine as builder
 
 # Set the working directory inside the container
 WORKDIR /app
@@ -11,10 +11,10 @@ COPY pom.xml .
 COPY src ./src
 
 # Build the application using Maven
-RUN ./mvnw package
+RUN mvn clean package -DskipTests
 
 # Create a new image with only the JAR file
-FROM adoptopenjdk:17-jre-hotspot-alpine
+FROM eclipse-temurin:17-jre-alpine
 
 # Set the working directory inside the container
 WORKDIR /app
